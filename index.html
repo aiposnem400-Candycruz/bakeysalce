@@ -1,0 +1,216 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bekeys salce page</title>
+
+  <!-- Security & SEO -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="bekeys salce website">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #38457b;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Product Grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer; /* makes it obvious the image is clickable */
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.02);
+    }
+
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .product h3 {
+      margin: 10px 0;
+    }
+
+    .price {
+      color: #8d345f;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #757c3a;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #484e68;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 13px;
+    }
+
+    /* Fullscreen Overlay */
+    .overlay {
+      position: fixed;
+      display: none;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    .overlay.active {
+      display: flex;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>BEKEY'S SALCE</h1>
+  <p>Quality Products • Affordable Prices</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="local products.html">Local Products</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+  <h2>In-stock Products</h2>
+
+  <div class="products">
+    <!-- Example Products -->
+    <div class="product">
+      <img src="image/H9df80d5c623240c09b05a27081540c820.jpg" alt="Product One">
+      <h3>Phone Watch</h3>
+      <h5>51.96inch Amoled Screen Men Smart Watch KM70 with Bt Call Blood Oxygen Heart Rate Smartwatch</h5>
+      <p class="price">K100</p>
+      <a href="https://wa.me/67571438055" class="btn" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product">
+      <img src="image/H4e4875583cff4825a505e0ca849d185eO.jpg" alt="Product Two">
+      <h3>Men Sunglass</h3>
+      <h5> High Quality Luxury Acetate Frame TR90 Temples Men Brands Sunglasses With TAC Lens</h5>
+      <p class="price">K30.00</p>
+      <a href="https://wa.me/67571438055
+      " class="btn" target="_blank">Buy Now</a>
+    </div>
+
+    <div class="product">
+      <img src="image/ultra.jpg" alt="Product Three">
+      <h3>S24 Ultra</h3>
+      <h5>Original for samsung Galaxy S24 Ultra Unlocked Used Smart Mobile Phone for Samusng Galaxy S24 Original Android Cell Phones</h5>
+      <p class="price">K1000.00</p>
+      <a href="https://wa.me/6751438055" class="btn" target="_blank">Buy Now</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Bekey's Website | All Rights Reserved</p>
+</footer>
+
+<!-- Fullscreen Overlay -->
+<div class="overlay" id="overlay">
+  <img src="" alt="Full View" id="overlay-img">
+</div>
+
+<script>
+  const overlay = document.getElementById('overlay');
+  const overlayImg = document.getElementById('overlay-img');
+  const products = document.querySelectorAll('.product img');
+
+  products.forEach(img => {
+    img.addEventListener('click', () => {
+      overlayImg.src = img.src;
+      overlay.classList.add('active');
+    });
+  });
+
+  overlay.addEventListener('click', () => {
+    overlay.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
